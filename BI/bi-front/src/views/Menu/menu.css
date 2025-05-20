@@ -1,0 +1,271 @@
+.menu_css{
+    margin: 0px;
+    display: grid;
+    padding: 0px;
+    max-width: 100%;
+    height: 100%;
+    font-family: system-ui;
+}
+
+.menu_css .m_arriba{
+    display: flex;
+    max-width: 100%;
+    height: 700px;
+    padding: 0px;
+}
+
+.menu_css .m_izquierda{
+    max-width: 400px;
+    border-right: 3px solid #DD0919;
+    text-align: center;
+}
+
+.menu_css .m_derecha{
+    background-color: #002854; 
+    background-blend-mode: multiply;
+    background-size: cover;
+    display: flex;
+    padding: 64px;
+}
+
+.menu_css .m_abajo{
+    height: 219px;
+    max-width: 100%;
+    border-top: 3px solid #DD0919;
+    padding: 0px;
+}
+
+.menu_css .nombretxt{
+    color: #002854;
+    font-size: 22px;
+    text-align: center;
+    margin-top: 17px;
+    font-weight: bold;
+    cursor: default;
+    margin-bottom: 17px;
+}
+
+.menu_css .btn_cerrar{
+    background-color: #DD0919;
+    padding: 10px;
+    color: white;
+    border-radius: 13px;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 24px;
+}
+
+.menu_css .splide__track{
+    overflow: hidden;
+}
+
+.menu_css .splide__list{
+    display: flex;
+    transition-property: transform;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu_css .splide__slide{
+    max-width: 382px;
+    height: 216px;
+    background-size: cover;
+    background-position: center;
+}
+
+.menu_css .splide__drag{
+    touch-action: pan-y;
+}
+
+.menu_css .splide{
+    overflow: hidden;
+}
+
+.menu_css .splide__track{
+    margin: 0px;
+    padding: 0px;
+    max-width: 100%;
+}
+
+.menu_css .splide__slide{
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.menu_css .modal {
+    position: fixed;
+    z-index: 1;
+    height: 100%;
+    padding: 0px;
+    max-width: 100%;
+    align-content: center;
+    margin: 0px;
+    text-align: -webkit-center;
+}
+
+.menu_css  .modal-content {
+    display: block;
+    margin: 0px;
+    border: 3px solid #DD0919;
+}
+
+.menu_css .close {
+    position: absolute;
+    top: 156px;
+    right: 443px;
+    color: #DD0919;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.menu_css .close:hover, .close:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.menu_css .cajaprincipal1{
+    border-radius: 20px;
+    height: 330px;
+    width: 400px;
+    align-self: center;
+    display: block;
+    padding: 0px;
+    cursor: pointer;
+    text-align: center;
+    align-content: center;
+    border: 2px solid white;
+}
+
+.menu_css .bientext{
+    color: #002854;
+    font-size: 30px;
+    text-align: center;
+    padding: 25px;
+    font-weight: 500;
+    width: 100%;
+}
+
+.menu_css .accesos{
+    width: 350px;
+    height: 190px;
+    padding: 0px;
+    display: ruby-text;
+}
+
+.menu_css .acceso{
+    width: 97px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-left: 7px;
+    margin-right: 7px;
+}
+
+.menu_css .gmail{
+    background-image: url('../../components/img/GMAIL.png');
+    background-size: cover;
+}
+
+.menu_css .gmail1 {
+    color:  rgb(25, 134, 177);          
+    border: 2px solid;    
+    border-color:rgb(25, 134, 177);       
+    padding: 5px;         
+    border-radius: 5px;   
+}
+
+.menu_css .drive{
+    background-image: url('../../components/img/DRIVE.png');
+    background-size: cover;
+}
+
+.menu_css .drive1 {
+    color:  rgb(25, 134, 177);          
+    border: 2px solid;    
+    border-color:rgb(25, 134, 177);       
+    padding: 5px;         
+    border-radius: 5px;   
+}
+
+.menu_css .myloft{
+    background-image: url('../../components/img/MYLOFT.png');
+    background-size: cover;
+}
+
+.menu_css .myloft1 {
+    color:  rgb(25, 134, 177);          
+    border: 2px solid;    
+    border-color:rgb(25, 134, 177);       
+    padding: 5px;         
+    border-radius: 5px;   
+}
+
+.menu_css .trilce{
+    background-image: url('../../components/img/TRILCE.png');
+    background-size: cover;
+}
+
+.menu_css .trilce1 {
+    margin-top: 20px;
+    color:  rgb(25, 134, 177);          
+    border: 2px solid;    
+    border-color:rgb(25, 134, 177);       
+    padding: 5px;         
+    border-radius: 5px;   
+}
+
+.menu_css .blackboard{
+    background-image: url('../../components/img/BLACKBOARD.png');
+    background-size: cover;
+}
+
+.menu_css .blackboard1 {
+    color:  rgb(25, 134, 177);          
+    border: 2px solid;    
+    border-color:rgb(25, 134, 177);       
+    padding: 5px;         
+    border-radius: 5px;   
+}
+
+.menu_css .clementina{
+    background-image: url('../../components/img/CLEMENTINA.png');
+    background-size: cover;
+}
+
+.menu_css .clementina1 {
+    color:  rgb(25, 134, 177);          
+    border: 2px solid;    
+    border-color:rgb(25, 134, 177);       
+    padding: 5px;         
+    border-radius: 5px;   
+}
+
+.menu_css .subtitulo{
+    color: rgb(255, 255, 255);
+    font-size: 32px;
+    margin-bottom: 10px;
+    margin-top: 130px;
+    font-weight: bold;
+}
+
+.menu_css .iconogen{
+    background-size: cover;
+    width: 234px;
+    height: 216px;
+}
+
+.menu_css .iconopers{
+    background-size: cover;
+    width: 234px;
+    height: 216px;
+}
+
+.menu_css .iconoest{
+    background-size: cover;
+    width: 234px;
+    height: 216px;
+}
