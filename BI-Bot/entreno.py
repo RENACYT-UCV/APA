@@ -3,6 +3,9 @@ import json
 import pickle
 import numpy as np
 import nltk
+nltk.download('punkt')
+nltk.download('punkt_tab')
+nltk.download('wordnet')
 from nltk.stem import WordNetLemmatizer
 from keras.models import Sequential# type: ignore
 from keras.layers import Dense, Dropout # type: ignore

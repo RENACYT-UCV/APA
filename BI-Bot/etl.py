@@ -138,6 +138,13 @@ def load_desempeno(conn, df):
     
 def etl_process():
     try:
+        conn_dimensional = pyodbc.connect(
+            'DRIVER={ODBC Driver 17 for SQL Server};'
+            'SERVER=LAB;'
+            'DATABASE=pruebaBI;'
+            'UID=root;'
+            'PWD=1234'
+        )
         conn_relacional = pyodbc.connect(
             'DRIVER={ODBC Driver 17 for SQL Server};'
             'SERVER=LAPTOP-S2348A7G;'
@@ -145,14 +152,7 @@ def etl_process():
             'UID=CAM;'
             'PWD=14092004'
         )
-        conn_dimensional = pyodbc.connect(
-            'DRIVER={ODBC Driver 17 for SQL Server};'
-            'SERVER=LAPTOP-S2348A7G;'
-            'DATABASE=pruebaBI;'
-            'UID=CAM;'
-            'PWD=14092004'
-        )
-
+        
         queries = [
             {
                 "query": """
@@ -303,3 +303,5 @@ def etl_process():
     
     except Exception as e:
         return f"Error desconocido: {str(e)}"
+
+etl_process()
