@@ -13,9 +13,9 @@
         },
         data(){
             return{
-                añoInicial: 2010,
-                añoFinal: 2013,
-                idCurso: 'GPDG102',
+                añoInicial: 2025,
+                añoFinal: 2026,
+                idCurso: '1',
                 cursos: [],
                 cursosGenero: [],
                 cursosTurno:[],
@@ -38,7 +38,7 @@
                 nombreCursoSeleccionado:'Competencia Comunicativa',
                 filters1: ['Competencia Comunicativa', 'Fundamentos Programación', 'Introducción Ingeniería','Matemática I','Pensamiento Lógico','Tutoría I'],
                 selectedFilter1: [],
-                filters2: ['2009-2012', '2011-2014', '2013-2016', '2015-2018','2017-2020','2019-2022','2021-2024'],
+                filters2: ['2009-2012', '2011-2014', '2013-2016', '2015-2018','2017-2020','2019-2022','2025-2026'],
                 selectedFilter2: [],
                 values:[],
                 // Colores para cada línea
@@ -202,12 +202,14 @@
             llenarArregloGenero(){
                 this.GeneroMasculino = this.cursosGenero.find(curso=>curso.Genero==='Masculino');
                 this.GeneroFemenino = this.cursosGenero.find(cursos=>cursos.Genero==='Femenino');
+                console.log("GeneroFemenino", this.GeneroFemenino);
+                
             },
 
             llenarArregloUnidad(){
-                this.UnidadU= this.cursosUnidad.find(curso=>curso.idUnidad==='U1');
-                this.UnidadS= this.cursosUnidad.find(curso=>curso.idUnidad==='U2');
-                this.UnidadT= this.cursosUnidad.find(curso=>curso.idUnidad==='U3');
+                this.UnidadU= this.cursosUnidad.find(curso=>curso.idUnidad==='1');
+                this.UnidadS= this.cursosUnidad.find(curso=>curso.idUnidad==='2');
+                this.UnidadT= this.cursosUnidad.find(curso=>curso.idUnidad==='3');
             },
 
             porcentajeAños(){
@@ -215,8 +217,8 @@
                 const por2010= (this.añosPromedios.find(año=>año.year===2010));
                 const por2011= (this.añosPromedios.find(año=>año.year===2011));
                 const por2021= (this.añosPromedios.find(año=>año.year===2021));
-                const por2022= (this.añosPromedios.find(año=>año.year===2022));
-                const por2023= (this.añosPromedios.find(año=>año.year===2023));
+                const por2022= (this.añosPromedios.find(año=>año.year===2025));
+                const por2023= (this.añosPromedios.find(año=>año.year===2026));
                 
                 this.porcentajeC1=[por2009.Porcentaje,por2010.Porcentaje,por2011.Porcentaje,por2021.Porcentaje,por2022.Porcentaje,por2023.Porcentaje];
                 this.labelsC1=[por2009.Notas+ ' notas en ' +por2009.year,
@@ -381,9 +383,9 @@
                 }else if(filter2==='2019-2022'){
                     this.añoInicial= 2019;
                     this.añoFinal=2022;
-                }else if(filter2==='2021-2024'){
-                    this.añoInicial= 2021;
-                    this.añoFinal=2024;
+                }else if(filter2==='2025-2026'){
+                    this.añoInicial= 2025;
+                    this.añoFinal=2026;
                 }
                 this.resumenCursos();
             },

@@ -204,6 +204,7 @@ export default {
           "/desempeno/cantidadNotasCurso"
         );
         this.notasCursos = responseNotaCursos.data;
+        this.cursos = this.notasCursos.map((item) => item.NombreCurso);
         this.sendMessage(this.notasCursos).then((res)=>{this.respuesta12=res}).catch((error)=>error);
 
         const responseEstudianteCategoria= await this.$axios.get('/desempeno/estudiantesCategoria')

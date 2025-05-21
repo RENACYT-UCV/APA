@@ -20,15 +20,17 @@ export default {
             idCurso:'GPDG102',
             cursos: [
                 { id: 1, name: 'Competencia Comunicativa' },
-                { id: 2, name: 'Fundamentos de Programación' },
-                { id: 3, name: 'Introducción a la Ingeniería' },
-                { id: 4, name: 'Matemática I'},
-                { id: 5, name: 'Pensamiento Lógico'},
-                { id: 6, name: 'Tutoría I'}
+                { id: 2, name: 'Matemática I' },
+                { id: 3, name: 'Pensamiento Lógico' },
+                { id: 4, name: 'Programación I'},
+                { id: 5, name: 'Estadística'},
+                { id: 6, name: 'Psicología General'},
+                { id: 7, name: 'Derecho Constitucional'},
+                { id: 8, name: 'Filosofía'},
             ],
             estudiantes: [],
             nombresEstudiante: '',
-            selectedSemestre: '2023-I',
+            selectedSemestre: '2025-I',
             semestres: [
                 { id: 1, name: '2015-I'},
                 { id: 2, name: '2015-II'},
@@ -46,8 +48,8 @@ export default {
                 { id: 14, name: '2021-II'},
                 { id: 15, name: '2022-I'},
                 { id: 16, name: '2022-II'},
-                { id: 17, name: '2023-I'},
-                { id: 18, name: '2023-II'},  
+                { id: 17, name: '2025-I'},
+                { id: 18, name: '2025-II'},  
             ],
             ciclo:'',
             carrera:'',
@@ -79,17 +81,17 @@ export default {
         },
         filtrar(){
             if(this.selectedCurso==='Competencia Comunicativa'){
-                this.idCurso='GPDG102'
+                this.idCurso='1'
             }else if(this.selectedCurso==='Fundamentos de Programación'){
-                this.idCurso='HEDE102'
+                this.idCurso='2'
             }else if(this.selectedCurso==='Introducción a la Ingeniería'){
-                this.idCurso='HEDE101'
+                this.idCurso='3'
             }else if(this.selectedCurso==='Matemática I'){
-                this.idCurso='HEDE103'
+                this.idCurso='4'
             }else if(this.selectedCurso==='Pensamiento Lógico'){
-                this.idCurso='GPDG101'
+                this.idCurso='5'
             }else if(this.selectedCurso==='Tutoría I'){
-                this.idCurso='VPDG101'
+                this.idCurso='6'
             }
             this.cargarDatos();
         },
@@ -101,7 +103,7 @@ export default {
             this.nombresEstudiante='';
             this.ciclo='';
             this.selectedCurso = 'Competencia Comunicativa';
-            this.selectedSemestre = '2023-I';
+            this.selectedSemestre = '2025-I';
         },
         async verDetalles(index) {
             const estudianteSeleccionado= this.estudiantes[index];

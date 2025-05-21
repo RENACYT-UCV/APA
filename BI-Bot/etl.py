@@ -140,17 +140,17 @@ def etl_process():
     try:
         conn_dimensional = pyodbc.connect(
             'DRIVER={ODBC Driver 17 for SQL Server};'
-            'SERVER=LAB;'
+            'SERVER=ZENTOO;'
             'DATABASE=pruebaBI;'
-            'UID=root;'
-            'PWD=1234'
+            'UID=sa;'
+            'PWD=gamemode31'
         )
         conn_relacional = pyodbc.connect(
             'DRIVER={ODBC Driver 17 for SQL Server};'
-            'SERVER=LAPTOP-S2348A7G;'
+            'SERVER=ZENTOO;'
             'DATABASE=BD_UCV_Notas;'
-            'UID=CAM;'
-            'PWD=14092004'
+            'UID=sa;'
+            'PWD=gamemode31'
         )
         
         queries = [
@@ -182,6 +182,7 @@ def etl_process():
                 "table_name": "DIM_TIEMPO_DEST",
                 "primary_key_column": ["fechaInicio", "Turno"]
             },
+            
             {
                 "query": """
                     SELECT E.CodigoE, E.dniE, E.nombresE, E.apellidosE, G.descripcion AS descripcion, 
@@ -261,27 +262,42 @@ def etl_process():
                 "table_name": "DIM_AMBIENTE_DEST",
                 "primary_key_column": ["aula", "idPabellon"]
             },
-            #{
-             #   "query": """
-              #      SELECT D.nota, U.idUnidad, T.idTipo, E.codigoE, Ce.idCategoriaE, C.idCurso, 
-                #           E.idCarrera, P.codigoD, Dm.fechaInicio, Dm.idTurno as Turno, Dm.aula, 
-               #            Dm.idPabellon as Pabellon
-                 #   FROM Detallenota D 
-                  #  INNER JOIN Tipo T ON T.idTipo= D.idTipo
-                   # INNER JOIN Notas N ON N.idDetalleMC= D.idDetalleMC
-                    #INNER JOIN DetalleMatricula Dm ON Dm.idMatricula = N.idMatricula AND Dm.idCurso= N.idCurso
-                    #INNER JOIN Curso C ON C.idCurso= Dm.idCurso
-                    #INNER JOIN Profesor P ON P.codigoD = Dm.codigoD
-                    #INNER JOIN Matrícula M ON M.idMatricula= Dm.idMatricula
-                    #INNER JOIN Estudiante E ON E.codigoE= M.codigoE
-                    #INNER JOIN CategoriaEstudiante Ce ON Ce.idCategoriaE = E.idCategoriaE
-                    #INNER JOIN Unidad U ON U.idUnidad= D.idUnidad
-                #""",
-                #"load_function": load_desempeno,
-                #"table_name": "H_DESEMPEÑO_DEST",
-                #"primary_key_column": ["nota", "idUnidad", "idTipo", "codigoE", "idCategoriaE", "idCurso", "idCarrera", "codigoD", "fechaInicio", "Turno", "aula", "Pabellon"]
-            #},
+            {
+                "query": """
+                    SELECT 
+                    Dn.nota, 
+                    U.idUnidad, 
+                    T.idTipo, 
+                    E.codigoE, 
+                    Ce.idCategoriaE, 
+                    C.idCurso, 
+                    E.idCarrera, 
+                    P.codigoD, 
+                    Dm.fechaInicio, 
+                    Dm.idTurno AS Turno, 
+                    Dm.aula, 
+                    Dm.idPabellon AS Pabellon
+                FROM DetalleNota Dn
+                INNER JOIN Tipo T ON T.idTipo = Dn.idTipo
+                INNER JOIN Unidad U ON U.idUnidad = Dn.idUnidad
+                INNER JOIN Notas N ON N.idNota = Dn.idNota
+                INNER JOIN DetalleMatricula Dm ON Dm.idDetalleMatricula = N.idDetalleMatricula
+                INNER JOIN Curso C ON C.idCurso = Dm.idCurso
+                INNER JOIN Profesor P ON P.codigoD = Dm.codigoD
+                INNER JOIN Matricula M ON M.idMatricula = Dm.idMatricula
+                INNER JOIN Estudiante E ON E.codigoE = M.codigoE
+                INNER JOIN CategoriaEstudiante Ce ON Ce.idCategoriaE = E.idCategoriaE;
+                """,
+                "load_function": load_desempeno,
+                "table_name": "H_DESEMPEÑO_DEST",
+                "primary_key_column": ["nota", "idUnidad", "idTipo", "codigoE", "idCategoriaE", "idCurso", "idCarrera", "codigoD", "fechaInicio", "Turno", "aula", "Pabellon"]
+            },
+            
         ]
+        
+        cursor = conn_dimensional.cursor()
+        cursor.execute("DELETE FROM [dbo].[H_DESEMPEÑO_DEST]")
+        conn_dimensional.commit()
 
         for item in queries:
             df = extract_data(conn_relacional, item["query"])

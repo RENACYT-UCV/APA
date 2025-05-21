@@ -55,18 +55,25 @@ export class DesempeñoService {
     }
 
     async getCantidadEstudiantesPorTurno() {
-       const result = await this.desempeñoRepository
-      .createQueryBuilder('H')
-      .innerJoin('H.estudiante', 'E')
-      .innerJoin('H.tiempo', 'T')
-      .innerJoin('H.curso', 'C')
-      .select("CASE WHEN T.Turno = 'M' THEN 'Mañana' WHEN T.Turno = 'T' THEN 'Tarde' WHEN T.Turno = 'N' THEN 'Noche' ELSE 'Desconocido' END", 'Turno')
-      .addSelect('COUNT(DISTINCT E.CodigoE)', 'cantidadEstudiantes')
-      .groupBy('T.Turno')
-      .getRawMany();
+    const result = await this.desempeñoRepository
+        .createQueryBuilder('H')
+        .innerJoin('H.estudiante', 'E')
+        .innerJoin('H.tiempo', 'T')
+        .innerJoin('H.curso', 'C')
+        .select(`
+        CASE 
+            WHEN T.Turno = 1 THEN 'Mañana'
+            WHEN T.Turno = 2 THEN 'Tarde'
+            WHEN T.Turno = 3 THEN 'Noche'
+            ELSE '0 Desconocido' 
+        END
+        `, 'Turno')
+        .addSelect('COUNT(DISTINCT E.CodigoE)', 'cantidadEstudiantes')
+        .groupBy('T.Turno')
+        .getRawMany();
 
-       return result;
-      }    
+    return result;
+    }   
 
     async getNotasCursos(){
         const resultados = await this.desempeñoRepository
@@ -243,7 +250,7 @@ export class DesempeñoService {
             .addSelect('SUM(CASE WHEN d.nota > 17 THEN 1 ELSE 0 END)', 'Notas')
             .addSelect('ROUND((SUM(CASE WHEN d.nota > 17 THEN 1 ELSE 0 END) * 100.0) / COUNT(d.nota), 2)', 'Porcentaje')
             .where('d.idCurso = :idCurso', { idCurso })
-            .andWhere('YEAR(d.fechaInicio) IN (:...years)', { years: [2009, 2010, 2011, 2021, 2022, 2023] })
+            .andWhere('YEAR(d.fechaInicio) IN (:...years)', { years: [2009, 2010, 2011, 2021, 2025, 2026] })
             .groupBy('YEAR(d.fechaInicio)')
             .getRawMany();
 

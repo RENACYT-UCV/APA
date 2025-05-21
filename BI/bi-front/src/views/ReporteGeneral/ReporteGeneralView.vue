@@ -315,8 +315,8 @@
                                         <p class="l2">Por  Asignatura</p>
                                     </v-container>
                                     <v-container class="caja1der_1">
-                                        <p class="genF">No Satistactorios</p>
-                                        <p class="genM">Satisfactorias</p>
+                                        <p class="genF">No Satistactorios (<14) </p>
+                                        <p class="genM">Satisfactorias (>16)</p>
                                         <v-icon right>mdi-star-outline</v-icon>
                                     </v-container>
                                 </v-container>
