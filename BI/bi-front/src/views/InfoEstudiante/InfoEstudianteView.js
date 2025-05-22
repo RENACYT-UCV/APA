@@ -82,16 +82,20 @@ export default {
         filtrar(){
             if(this.selectedCurso==='Competencia Comunicativa'){
                 this.idCurso='1'
-            }else if(this.selectedCurso==='Fundamentos de Programación'){
-                this.idCurso='2'
-            }else if(this.selectedCurso==='Introducción a la Ingeniería'){
-                this.idCurso='3'
             }else if(this.selectedCurso==='Matemática I'){
-                this.idCurso='4'
+                this.idCurso='2'
             }else if(this.selectedCurso==='Pensamiento Lógico'){
+                this.idCurso='3'
+            }else if(this.selectedCurso==='Programación I'){
+                this.idCurso='4'
+            }else if(this.selectedCurso==='Estadística'){
                 this.idCurso='5'
-            }else if(this.selectedCurso==='Tutoría I'){
+            }else if(this.selectedCurso==='Psicología General'){
                 this.idCurso='6'
+            }else if(this.selectedCurso==='Derecho Constitucional'){
+                this.idCurso='7'
+            }else if(this.selectedCurso==='Filosofía'){
+                this.idCurso='8'
             }
             this.cargarDatos();
         },
