@@ -23,10 +23,6 @@
                     <p class="subtitulo">Reporte General</p>
                     <v-container class="iconogen"></v-container>
                 </v-container>
-                <v-container class="cajaprincipal1" @click="irReportePersonalizado">
-                    <p class="subtitulo">Reporte Personalizado</p>
-                    <v-container class="iconopers"></v-container>
-                </v-container>
                 <v-container class="cajaprincipal1" @click="irInfoEstudiante">
                     <p class="subtitulo">Análisis por Estudiante</p>
                     <v-container class="iconoest"></v-container>
