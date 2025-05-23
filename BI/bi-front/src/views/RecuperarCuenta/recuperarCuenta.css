@@ -88,3 +88,83 @@
     margin-left: 150px;
     margin-right: 150px;
 }
+
+.recuperarcuenta_css .btn-recuperar:hover{
+    background-color: #bec2be;
+}
+
+.recuperarcuenta_css .btn-cancelar:hover{
+    background-color: #DD0919;
+}
+
+@media screen and (max-width: 1020px) {
+    .recuperarcuenta_css .izquierda {
+        width: 70%;
+    }
+
+    .recuperarcuenta_css .derecha {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .recuperarcuenta_css .cajaprincipal {
+        flex-direction: column;
+        height: auto;
+        width: 90%;
+    }
+
+    .recuperarcuenta_css .izquierda {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .recuperarcuenta_css .derecha {
+        display: none;
+    }
+
+    .recuperarcuenta_css .ingtxt,
+    .recuperarcuenta_css .btn-recuperar,
+    .recuperarcuenta_css .btn-cancelar {
+        width: 100%;
+        max-width: 300px;
+        margin: 10px auto;
+    }
+
+    .recuperarcuenta_css .texto {
+        font-size: 14px;
+        margin: 0 auto 15px;
+        width: 90%;
+    }
+
+    .recuperarcuenta_css .bientext {
+        font-size: 24px;
+        padding: 20px 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .recuperarcuenta_css .cajaprincipal {
+        width: 95%;
+    }
+
+    .recuperarcuenta_css .bientext {
+        font-size: 20px;
+        padding: 15px;
+    }
+
+    .recuperarcuenta_css .ingtxt {
+        width: 90%;
+    }
+
+    .recuperarcuenta_css .texto {
+        font-size: 13px;
+        width: 90%;
+    }
+
+    .recuperarcuenta_css .btn-recuperar,
+    .recuperarcuenta_css .btn-cancelar {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
