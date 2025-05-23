@@ -22,7 +22,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/ValidarCodigo/ValidarCodigoView.vue')
   },
   {
-    path: '/RestablecerContraseña',
+    path: '/RestablecerContrasena',
     name: 'RestablecerContraseñaView',
     component: () => import(/* webpackChunkName: "about" */ '../views/RestablecerContraseña/RestablecerContraseñaView.vue')
   },

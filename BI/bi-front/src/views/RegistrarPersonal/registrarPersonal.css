@@ -79,7 +79,7 @@
 }
 
 .registrarpersonal_css .ingtxt1{
-    width: 350px;
+    width: 100%;
     color: #002854;
     margin-bottom: -9px;
     margin-left: 10px;
@@ -87,10 +87,10 @@
 }
 
 .registrarpersonal_css .ingcontraseña{
-    width: 301px;
+    width: 100%;
     color: #002854;
-    margin-bottom: -9px;
-    margin-left: 25px;
+    margin-bottom: -14px;
+    margin-left: 10px;
     margin-right: 10px;
 }
 
@@ -103,3 +103,89 @@
     margin-left: 150px;
     margin-right: 150px;
 }
+
+.registrarpersonal_css .btn-registrar:hover{
+    background-color: #bec2be;
+}
+
+.registrarpersonal_css .btn-cancelar:hover{
+    background-color: #DD0919;
+}
+
+@media screen and (max-width: 1280px) {
+    .registrarpersonal_css .cajaprincipal {
+        width: 95%;
+        height: auto;
+        flex-direction: row;
+    }
+
+    .registrarpersonal_css .izquierda {
+        width: 70%;
+    }
+
+    .registrarpersonal_css .derecha {
+        width: 30%;
+    }
+
+    .registrarpersonal_css .ingtxt {
+        width: 100%;
+        margin: 8px 0;
+    }
+    .registrarpersonal_css .ingtxt1{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .registrarpersonal_css .ingcontraseña {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .registrarpersonal_css .ingtxt,
+    .registrarpersonal_css .ingcontraseña {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .registrarpersonal_css .btn-registrar,
+    .registrarpersonal_css .btn-cancelar {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .registrarpersonal_css .btn-cancelar {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .registrarpersonal_css .texto {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .registrarpersonal_css .cajaprincipal {
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+    }
+
+    .registrarpersonal_css .izquierda {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .registrarpersonal_css .derecha {
+        display: none;
+    }
+
+    .registrarpersonal_css .info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    
+}
+
+

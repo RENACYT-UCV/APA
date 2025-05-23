@@ -93,3 +93,83 @@
     margin-left: 150px;
     margin-right: 150px;
 }
+
+.restablecercontraseña_css .btn-recuperar:hover{
+    background-color: #bec2be;
+}
+
+.restablecercontraseña_css .btn-cancelar:hover{
+    background-color: #DD0919;
+}
+
+@media screen and (max-width: 768px) {
+    .restablecercontraseña_css .cajaprincipal {
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+    }
+
+    .restablecercontraseña_css .izquierda {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .restablecercontraseña_css .derecha {
+        display: none;
+    }
+
+    .restablecercontraseña_css .info {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .restablecercontraseña_css .ingtxt,
+    .restablecercontraseña_css .ingtxt1 {
+        width: 100%;
+        margin-bottom: 12px;
+    }
+
+    .restablecercontraseña_css .btn-recuperar,
+    .restablecercontraseña_css .btn-cancelar {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .restablecercontraseña_css .texto {
+        width: 90%;
+        margin: 0 auto 15px auto;
+        font-size: 14px;
+    }
+
+    .restablecercontraseña_css .bientext {
+        font-size: 26px;
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .restablecercontraseña_css .cajaprincipal {
+        width: 95%;
+    }
+
+    .restablecercontraseña_css .bientext {
+        font-size: 22px;
+        padding: 10px;
+    }
+
+    .restablecercontraseña_css .texto {
+        font-size: 13px;
+        padding: 0 10px;
+    }
+
+    .restablecercontraseña_css .ingtxt,
+    .restablecercontraseña_css .ingtxt1 {
+        font-size: 15px;
+    }
+
+    .restablecercontraseña_css .btn-recuperar,
+    .restablecercontraseña_css .btn-cancelar {
+        font-size: 14px;
+        padding: 10px;
+    }
+}

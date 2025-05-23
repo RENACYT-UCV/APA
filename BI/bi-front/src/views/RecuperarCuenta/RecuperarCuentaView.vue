@@ -9,7 +9,7 @@
 
                     <p class="bientext">Recuperar Cuenta</p>
 
-                    <p class="texto">Ingresa tu correo electrónico y te enviaremos un código para que recuperes el acceso a tu cuenta.</p>
+                    <p class="texto">Escribe tu correo para enviarte un código de recuperación.</p>
 
                     <v-container class="info">
 
