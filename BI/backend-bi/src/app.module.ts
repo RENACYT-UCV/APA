@@ -20,22 +20,33 @@ import { TipocalificacionModule } from './tipocalificacion/tipocalificacion.modu
 import { UnidadModule } from './unidad/unidad.module';
 import { TiempoModule } from './tiempo/tiempo.module';
 import { DesempeñoModule } from './desempeño/desempeño.module';
+import { ConfigModule } from '@nestjs/config';
+import { ConfigService } from '@nestjs/config';
 
 @Module({
   imports: [
-            TypeOrmModule.forRoot({
-              type:'mssql', 
-              host:'ZENTOO',
-              port:1433,
-              username:'sa',
-              password: 'gamemode31',
-              database: 'pruebaBI',
-              entities: [__dirname + '/**/*.entity{.ts,.js}'],
-              synchronize: true,
-              options: {
-                encrypt: true,  // Habilita cifrado
-                trustServerCertificate: true, // Aceptar certificados auto-firmados
-              },
+            ConfigModule.forRoot({
+              isGlobal: true,
+              envFilePath: '.env',
+            }),
+            TypeOrmModule.forRootAsync({
+             imports: [ConfigModule],
+             inject: [ConfigService],
+             useFactory: async (configService: ConfigService) => ({
+               type: 'mssql',
+                host: configService.get('DB_HOST'),
+                port: +configService.get('DB_PORT'),
+                username: configService.get('DB_USERNAME'),
+                password: configService.get('DB_PASSWORD'),
+                database: configService.get('DB_NAME'),
+                entities: [__dirname + '/**/*.entity{.ts,.js}'],
+                synchronize: true,
+                options: {
+                  encrypt: true, // Para Azure
+                  enableArithAbort: true, // Para Azure
+                  trustServerCertificate: true,
+                }
+              })
             }),
             UsuariosModule,
             PersonalModule,
